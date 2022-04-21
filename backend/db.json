@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Yadash",
+      "email": "yadash@gmail.com",
+      "mobile": "964851205",
+      "salary": "8,000"
+    }
+  ],
+  "signupUsers": [],
+  "profile": "typicode"
+}
