@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-singup',
@@ -15,7 +16,8 @@ export class SingupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toast: NgToastService
     ) { }
 
   ngOnInit(): void {
@@ -30,12 +32,12 @@ export class SingupComponent implements OnInit {
   signUp(){
     this.http.post<any>("http://localhost:3001/signupUsers", this.signupForm.value)
     .subscribe(res => {
-      alert("Sign Up Successfully!!!");
+      this.toast.success({detail: "Sign Up Successfully!!!", summary: res.message, duration: 3000});
       this.signupForm.reset();
       this.router.navigate(['login']);
     },
     error => {
-      alert("Something went wrong!!!");
+      this.toast.error({detail: "Something went wrong!!!", summary: "Login Failed, try again later!", duration: 3000});
     });
   }
 }

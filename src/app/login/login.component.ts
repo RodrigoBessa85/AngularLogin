@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.loginForm.reset();
         this.router.navigate(['dashboard']);
       } else {
-        this.toast.success({detail: "User not found!", summary: res.message, duration: 3000});
+        this.toast.warning({detail: "User not found!", summary: res.message, duration: 3000});
       }
     },
     error => {
