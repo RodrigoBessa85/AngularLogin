@@ -9,6 +9,13 @@
       "salary": "8,000"
     }
   ],
-  "signupUsers": [],
-  "profile": "typicode"
+  "signupUsers": [
+    {
+      "fullName": "Rodrigo",
+      "mobileNumber": 9999999999999,
+      "emailAddress": "teste@teste.com",
+      "password": "1235",
+      "id": 1
+    }
+  ]
 }
